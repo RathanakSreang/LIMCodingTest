@@ -1,28 +1,27 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This small application is allow user to fetch content h1, h2, h3 and link from any website which given url. They can also view the history of all page content which they used to fetch.
 
-Things you may want to cover:
+start server:
+rails s
 
-* Ruby version
+### 1. fetch page content
+  - Method: `post`
+  - API end point: `api/v1/pages/fetch`
+  - Parameter: `url: string`
+  - Return: page object with its content
+Ex: `curl -X POST 'Accept: application/json' -d 'url=example.com' 'http://localhost:3000/api/v1/pages/fetch'`
 
-* System dependencies
+### 2. view fetch page history
+  - Method: `get`
+  - API end point: `api/v1/pages/list`
+  - Parameter: none
+  - Return: array of pages object with its content
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ex: `curl -X GET --header 'Accept: application/json' 'http://localhost:3000/api/v1/pages/list'`
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Happy Coding. :)
+
+
+
