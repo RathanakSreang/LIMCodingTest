@@ -5,15 +5,20 @@ module Api
       def fetch
         page = Page.new url: params[:url]
         if page.valid?
-          render json: { contents: 'Rathanak'}
+          page.fetch_contents
+          if page.save!
+            render json: page, root: 'page', adapter: :json
+          else
+            render json: { errors: 'Cannot fetch page' }
+          end
         else
           render json: { errors: page.errors }
         end
       end
 
       def list
-        contents = Page.all
-        render json: contents#{ contents: contents}
+        pages = Page.all
+        render json: pages, root: 'pages', adapter: :json
       end
     end
   end

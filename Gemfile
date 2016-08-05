@@ -9,6 +9,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'active_model_serializers'
+gem 'nokogiri'
+gem 'rest-client'
 group :development, :test do
   gem "pry"
   gem "better_errors"
@@ -17,11 +20,10 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem "brakeman"
-  gem "rails_best_practices"
 end
 
 group :test do
+  gem "airborne"
   gem "rspec-rails", "~> 3.1.0"
   gem "faker"
   gem "factory_girl_rails"

@@ -13,25 +13,25 @@
 
 ActiveRecord::Schema.define(version: 20160804042815) do
 
-  create_table "contents", force: :cascade do |t|
-    t.string   "sentence",   limit: 255
+  create_table "page_tags", force: :cascade do |t|
+    t.integer  "page_id",    limit: 4
+    t.integer  "tag_id",     limit: 4
+    t.string   "type",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
-
-  create_table "page_contents", force: :cascade do |t|
-    t.integer  "page_id",    limit: 4
-    t.integer  "content_id", limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
-  add_index "page_contents", ["page_id", "content_id"], name: "index_page_contents_on_page_id_and_content_id", unique: true, using: :btree
 
   create_table "pages", force: :cascade do |t|
     t.string   "url",        limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.text     "content",    limit: 65535
+    t.string   "type",       limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

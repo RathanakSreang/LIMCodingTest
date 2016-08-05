@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
-    scope module: :v1 do
+    namespace :v1 do
       post 'pages/fetch' => 'pages#fetch'
       get 'pages/list' => 'pages#list'
     end

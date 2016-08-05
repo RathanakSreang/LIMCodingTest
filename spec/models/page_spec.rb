@@ -7,8 +7,10 @@ describe Page do
   let!(:page){FactoryGirl.create :page}
 
   describe 'validates associations' do
-    it { should have_many(:page_contents) }
-    it { should have_many(:contents) }
+    it { should have_many(:page_a_tags) }
+    it { should have_many(:a_tags) }
+    it { should have_many(:page_h_tags) }
+    it { should have_many(:h_tags) }
   end
 
   describe 'validates url' do

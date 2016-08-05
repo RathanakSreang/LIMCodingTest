@@ -1,0 +1,2 @@
+class ATag < Tag
+end
