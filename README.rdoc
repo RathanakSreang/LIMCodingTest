@@ -5,23 +5,24 @@ This small application is allow user to fetch content h1, h2, h3 and link from a
 start server:
 rails s
 
-### 1. fetch page content
-  - Method: `post`
-  - API end point: `api/v1/pages/fetch`
-  - Parameter: `url: string`
+1. fetch page content
+  - Method: POST
+  - API end point: api/v1/pages/fetch
+  - Parameter: url: string
   - Return: page object with its content
-Ex: `curl -X POST 'Accept: application/json' -d 'url=example.com' 'http://localhost:3000/api/v1/pages/fetch'`
+Ex: curl -X POST 'Accept: application/json' -d 'url=example.com' 'http://localhost:3000/api/v1/pages/fetch'
 
-### 2. view fetch page history
-  - Method: `get`
-  - API end point: `api/v1/pages/list`
+2. view fetch page history
+  - Method: GET
+  - API end point: api/v1/pages/list
   - Parameter: none
   - Return: array of pages object with its content
 
-Ex: `curl -X GET --header 'Accept: application/json' 'http://localhost:3000/api/v1/pages/list'`
+Ex: curl -X GET --header 'Accept: application/json' 'http://localhost:3000/api/v1/pages/list'
 
 
 Happy Coding. :)
 
+RathanakJame007
 
 
